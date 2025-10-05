@@ -1,0 +1,39 @@
+{
+  "name": "ajans-sitesi",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@portabletext/react": "^4.0.3",
+    "@prisma/client": "^6.16.2",
+    "@sanity/client": "^7.11.2",
+    "@sanity/image-url": "^1.2.0",
+    "bcryptjs": "^3.0.2",
+    "framer-motion": "^12.23.22",
+    "jspdf": "^3.0.3",
+    "jspdf-autotable": "^5.0.2",
+    "lucide-react": "^0.544.0",
+    "next": "15.5.3",
+    "next-auth": "^4.24.11",
+    "nodemailer": "^6.10.1",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-share": "^5.2.2",
+    "swiper": "^12.0.2",
+    "yet-another-react-lightbox": "^3.25.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@tailwindcss/typography": "^0.5.19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.3",
+    "prisma": "^6.16.2",
+    "tailwindcss": "^4"
+  }
+}

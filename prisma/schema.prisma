@@ -1,0 +1,57 @@
+// Bu dosya, veritabanımızın yapısını tanımlar.
+// Prisma, bu şemayı okuyarak veritabanı ile konuşur.
+
+// Veritabanı bağlantı ayarları
+datasource db {
+  provider = "mysql" // Hosting'imiz büyük ihtimalle MySQL kullanıyordur.
+  url      = env("DATABASE_URL") // Bağlantı bilgisini .env dosyasından alacağız.
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Admin paneline giriş yapacak kullanıcı için model
+// İleride NextAuth.js ile bunu kullanacağız.
+model User {
+  id    String @id @default(cuid())
+  email String @unique
+  password String
+  name  String?
+}
+
+
+// Müşterilerimizi saklayacağımız tablo
+model Customer {
+  id        String   @id @default(cuid()) // Otomatik, benzersiz bir ID
+  createdAt DateTime @default(now())      // Müşterinin oluşturulma tarihi
+  updatedAt DateTime @updatedAt         // Müşterinin son güncellenme tarihi
+  name      String                      // Müşterinin adı (örn: Peri Masalı Otel)
+  contactEmail String                  // Müşterinin iletişim e-postası 
+  
+  // Bir müşterinin birden çok raporu olabilir.
+  reports   Report[]
+}
+
+
+// Oluşturacağımız raporları saklayacağımız tablo
+model Report {
+  id        String   @id @default(cuid()) // Otomatik, benzersiz bir ID
+  createdAt DateTime @default(now())      // Raporun oluşturulma tarihi
+  reportTitle String? // Örn: "Ekim 2025 Meta Raporu"
+  documentNumber String @unique @default(cuid()) // Otomatik, benzersiz belge numarası
+  
+  platform  String   // 'meta' veya 'google'
+  
+  // Rapor metrikleri
+  spent     Float?   // Harcanan Tutar
+  reach     Int?     // Erişim (sadece Meta için)
+  impressions Int?   // Gösterim
+  clicks    Int?     // Tıklamalar
+  ctr       Float?   // Tıklama Oranı (sadece Google için)
+  conversions Int?   // Dönüşümler
+  
+  // Her rapor bir müşteriye aittir.
+  customer   Customer @relation(fields: [customerId], references: [id])
+  customerId String
+}

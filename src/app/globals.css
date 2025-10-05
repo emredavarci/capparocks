@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Swiper'ın başlangıçta üst üste binmesini önlemek için */
+.swiper-slide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+  visibility: visible;
+}
