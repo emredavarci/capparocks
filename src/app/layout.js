@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import './globals.css'
 import Link from 'next/link'
 import { Playfair_Display, Inter } from 'next/font/google'
+import Script from 'next/script' // HATA DÜZELTMESİ 1: 'Script' komponentini içe aktardık
 import MobileMenu from '../components/MobileMenu'
 import WhatsAppButton from '../components/WhatsAppButton'
 
@@ -19,9 +20,10 @@ export default function RootLayout({ children }) {
       <head>
         <title>Kapadokya Dijital</title>
         <meta name="description" content="Kapadokya Otelleri için Dijital Çözümler" />
-        <script src="https://cdn.tailwindcss.com"></script>
+        {/* HATA DÜZELTMESİ 2: Tailwind CDN script'i kaldırıldı. */}
+        {/* Next.js, 'npm run build' yaparken Tailwind CSS'i otomatik olarak globals.css üzerinden derler. */}
+        {/* Bu script'e canlıda gerek yoktur ve hataya neden olabilir. */}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
       </head>
       
       <body className="bg-white font-sans">
@@ -35,8 +37,6 @@ export default function RootLayout({ children }) {
               <Link href="/hakkimizda" className="text-sm font-semibold hover:text-blue-600">Hakkımızda</Link>
               <Link href="/hizmetlerimiz" className="text-sm font-semibold hover:text-blue-600">Hizmetlerimiz</Link>
               <Link href="/blog" className="text-sm font-semibold hover:text-blue-600">Blog</Link>
-
-
             </nav>
 
             {/* Sol Tarafta Mobil için boşluk bırakıcı */}
@@ -74,7 +74,6 @@ export default function RootLayout({ children }) {
         </header>
 
         <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
-
 
         <main>{children}</main>
 
@@ -119,8 +118,10 @@ export default function RootLayout({ children }) {
           </div>
         </footer>
         <WhatsAppButton />
+
+        {/* HATA DÜZELTMESİ 1: Swiper script'i Next.js'e uygun hale getirildi. */}
+        <Script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" />
       </body>
     </html>
   );
 }
-

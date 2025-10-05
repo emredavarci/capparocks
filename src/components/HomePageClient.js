@@ -1,5 +1,3 @@
-// src/app/components/HomePageClient.js
-
 'use client'
 
 import { useState } from 'react';
@@ -50,8 +48,10 @@ export default function HomePageClient({ posts }) {
       <section className="w-full max-w-5xl mx-auto p-8 py-20">
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 font-serif">Kontrolü Tekrar Elinize Alın</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white border border-gray-200 p-8 rounded-2xl text-left shadow-lg"><h3 className="text-2xl font-semibold mb-4 text-gray-900 font-serif">Sorun: Görünürlük</h3><p className="text-gray-600 mb-4">"Misafirler Kapadokya'da otel aradığında rakiplerinizi mi buluyor? Dijital dünyada kaybolmuş gibi mi hissediyorsunuz?"</p><h3 className="text-2xl font-semibold mb-4 text-blue-600 font-serif">Çözümümüz</h3><p className="text-gray-700">Arama motorlarında ve sosyal medyada sizi öne çıkaran bir dijital kimlik inşa ediyoruz. Artık misafirler rakiplerinizi değil, sizi bulacak.</p></div>
-            <div className="bg-white border border-gray-200 p-8 rounded-2xl text-left shadow-lg"><h3 className="text-2xl font-semibold mb-4 text-gray-900 font-serif">Sorun: Yüksek Komisyonlar</h3><p className="text-gray-600 mb-4">"Rezervasyonlarınızın büyük bir kısmı aracı kurumlardan mı geliyor? Yüksek komisyonlar kârınızı mı eritiyor?"</p><h3 className="text-2xl font-semibold mb-4 text-blue-600 font-serif">Çözümümüz</h3><p className="text-gray-700">Komisyon giderlerinizi en aza indirmek için tasarlanmış, size direkt rezervasyon getiren bir sistem kuruyoruz. Kârınız size kalsın.</p></div>
+            {/* HATA DÜZELTMESİ: Tırnak işaretleri &quot; ve &apos; ile değiştirildi */}
+            <div className="bg-white border border-gray-200 p-8 rounded-2xl text-left shadow-lg"><h3 className="text-2xl font-semibold mb-4 text-gray-900 font-serif">Sorun: Görünürlük</h3><p className="text-gray-600 mb-4">&quot;Misafirler Kapadokya&apos;da otel aradığında rakiplerinizi mi buluyor? Dijital dünyada kaybolmuş gibi mi hissediyorsunuz?&quot;</p><h3 className="text-2xl font-semibold mb-4 text-blue-600 font-serif">Çözümümüz</h3><p className="text-gray-700">Arama motorlarında ve sosyal medyada sizi öne çıkaran bir dijital kimlik inşa ediyoruz. Artık misafirler rakiplerinizi değil, sizi bulacak.</p></div>
+            {/* HATA DÜZELTMESİ: Tırnak işaretleri &quot; ve &apos; ile değiştirildi */}
+            <div className="bg-white border border-gray-200 p-8 rounded-2xl text-left shadow-lg"><h3 className="text-2xl font-semibold mb-4 text-gray-900 font-serif">Sorun: Yüksek Komisyonlar</h3><p className="text-gray-600 mb-4">&quot;Rezervasyonlarınızın büyük bir kısmı aracı kurumlardan mı geliyor? Yüksek komisyonlar kârınızı mı eritiyor?&quot;</p><h3 className="text-2xl font-semibold mb-4 text-blue-600 font-serif">Çözümümüz</h3><p className="text-gray-700">Komisyon giderlerinizi en aza indirmek için tasarlanmış, size direkt rezervasyon getiren bir sistem kuruyoruz. Kârınız size kalsın.</p></div>
           </div>
       </section>
 
@@ -109,7 +109,8 @@ export default function HomePageClient({ posts }) {
       
       <section className="w-full max-w-3xl mx-auto p-8 py-20 text-center">
           <h2 className="text-4xl font-bold text-gray-800 mb-4 font-serif">Biz Kimiz?</h2>
-          <p className="text-lg text-gray-600 leading-relaxed">Biz, Kapadokya'nın ruhunu anlayan ve teknolojinin gücüne inanan bir ekibiz. Amacımız, bölgedeki otellerin ve işletmelerin dijital potansiyelini en üst seviyeye çıkararak, onların başarı hikayelerini birlikte yazmaktır. Sizin başarınız, bizim tutkumuzdur.</p>
+          {/* HATA DÜZELTMESİ: Kapadokya'nın -> Kapadokya&apos;nın */}
+          <p className="text-lg text-gray-600 leading-relaxed">Biz, Kapadokya&apos;nın ruhunu anlayan ve teknolojinin gücüne inanan bir ekibiz. Amacımız, bölgedeki otellerin ve işletmelerin dijital potansiyelini en üst seviyeye çıkararak, onların başarı hikayelerini birlikte yazmaktır. Sizin başarınız, bizim tutkumuzdur.</p>
       </section>
       
       <section className="w-full bg-gray-50 py-20">
