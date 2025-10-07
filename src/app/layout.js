@@ -121,6 +121,7 @@ export default function RootLayout({ children }) {
 
         {/* HATA DÜZELTMESİ 1: Swiper script'i Next.js'e uygun hale getirildi. */}
         <Script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" />
+        <script src="https://cdn.tailwindcss.com"></script>
       </body>
     </html>
   );
